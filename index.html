@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zixuan Zhang - Portfolio</title>
+    <meta name="description" content="Zixuan Zhang's professional portfolio - Master of Public Administration student and finance professional with experience at Grant Thornton and CITIC Securities.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(240, 249, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #2563eb;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, #dbeafe 0%, #f0f9ff 100%);
+        }
+
+        .hero-avatar {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            border: 4px solid white;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #111827;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #6b7280;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #2563eb;
+            border: 2px solid #2563eb;
+        }
+
+        .btn-secondary:hover {
+            background: #2563eb;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #111827;
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: #2563eb;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .card p {
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #2563eb;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            background: #2563eb;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #2563eb;
+        }
+
+        .timeline-date {
+            color: #2563eb;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            color: #111827;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-company {
+            color: #6b7280;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-description {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #dbeafe 0%, #f0f9ff 100%);
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #374151;
+        }
+
+        .contact-item a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .timeline {
+                padding-left: 1rem;
+            }
+
+            .timeline-item::before {
+                left: -1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Zixuan Zhang</div>
+            <ul class="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="hero">
+        <div class="container">
+            <img src="avatar.jpg" alt="Zixuan Zhang" class="hero-avatar">
+            <h1>Zixuan Zhang</h1>
+            <p>Master of Public Administration Student & Finance Professional</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Contact Me</a>
+                <a href="#experience" class="btn btn-secondary">View Experience</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 - Present</div>
+                    <div class="timeline-title">Master of Public Administration</div>
+                    <div class="timeline-company">Central University of Finance and Economics (CUFE)</div>
+                    <div class="timeline-description">
+                        Pursuing advanced studies in public administration with focus on policy analysis, 
+                        governance, and public sector management. Developing expertise in administrative 
+                        theory and practice.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Summer 2023</div>
+                    <div class="timeline-title">UC Berkeley Summer Program</div>
+                    <div class="timeline-company">University of California, Berkeley</div>
+                    <div class="timeline-description">
+                        Participated in intensive summer program focusing on international economics 
+                        and policy analysis. Gained exposure to global perspectives on economic 
+                        development and policy implementation.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2020 - 2024</div>
+                    <div class="timeline-title">Bachelor's Degree</div>
+                    <div class="timeline-company">Central University of Finance and Economics (CUFE)</div>
+                    <div class="timeline-description">
+                        Completed undergraduate studies with strong foundation in economics, 
+                        finance, and analytical thinking. Developed quantitative and qualitative 
+                        research skills.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-title">Finance Intern</div>
+                    <div class="timeline-company">Grant Thornton</div>
+                    <div class="timeline-description">
+                        Gained hands-on experience in financial analysis and audit procedures. 
+                        Assisted with client engagements and developed skills in financial reporting, 
+                        data analysis, and professional communication.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2022</div>
+                    <div class="timeline-title">Finance Intern</div>
+                    <div class="timeline-company">CITIC Securities</div>
+                    <div class="timeline-description">
+                        Contributed to investment research and financial modeling activities. 
+                        Developed understanding of capital markets, investment strategies, and 
+                        financial analysis methodologies.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2021</div>
+                    <div class="timeline-title">Student Leader</div>
+                    <div class="timeline-company">CUFE Student Organizations</div>
+                    <div class="timeline-description">
+                        Led various student initiatives and organized campus events. 
+                        Developed leadership, project management, and team coordination skills 
+                        while serving the student community.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Academic Projects</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>Public Policy Analysis Research</h3>
+                    <p>Conducted comprehensive research on public policy effectiveness and implementation strategies. Analyzed case studies and developed policy recommendations.</p>
+                </div>
+                <div class="card">
+                    <h3>Financial Markets Analysis</h3>
+                    <p>Performed detailed analysis of financial market trends and investment opportunities. Utilized quantitative methods and financial modeling techniques.</p>
+                </div>
+                <div class="card">
+                    <h3>Economic Development Study</h3>
+                    <p>Researched regional economic development patterns and policy impacts. Presented findings to academic and professional audiences.</p>
+                </div>
+                <div class="card">
+                    <h3>International Economics Project</h3>
+                    <p>Analyzed global economic trends and their implications for domestic policy. Developed insights into international trade and economic relations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="section">
+        <div class="container">
+            <h2 class="section-title">Honors & Awards</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>Academic Excellence Scholarship</h3>
+                    <p>Recognized for outstanding academic performance and dedication to studies. Awarded for maintaining high GPA and academic achievement.</p>
+                </div>
+                <div class="card">
+                    <h3>Leadership Recognition</h3>
+                    <p>Honored for exceptional leadership in student organizations and campus activities. Demonstrated ability to inspire and guide peers.</p>
+                </div>
+                <div class="card">
+                    <h3>Research Competition Winner</h3>
+                    <p>Placed first in university-level research competition for innovative approach to policy analysis and presentation of findings.</p>
+                </div>
+                <div class="card">
+                    <h3>Merit-based Award</h3>
+                    <p>Received recognition for academic excellence and contribution to university community through various initiatives and projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p>I'm always open to discussing new opportunities and collaborations.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:zhangzixuan0728@126.com">zhangzixuan0728@126.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Beijing, China</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active class to navigation items on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navItems = document.querySelectorAll('.nav-menu a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').substring(1) === current) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
