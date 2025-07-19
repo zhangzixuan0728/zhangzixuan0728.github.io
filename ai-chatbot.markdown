@@ -9,7 +9,7 @@ permalink: /Zixuan Zhang-ai-bot/
 
 <div id="mendable-component"></div>
 
-<script src="/dist/umd/mendable-bundle.min.js"></script>
+<script src="https://unpkg.com/@mendable/search@0.0.205/dist/umd/mendable-bundle.min.js"></script>
 <script>
 Mendable.initialize({
     anon_key: '5fa8d017-411b-42b1-b935-58cf9532a98f',
@@ -19,7 +19,7 @@ Mendable.initialize({
 });
 </script>
 
-<script src="dist/umd/mendable-bundle.min.js"></script>
+<script src="https://unpkg.com/@mendable/search@0.0.205/dist/umd/mendable-bundle.min.js"></script>
 <script>
 Mendable.initialize({
     anon_key: '5fa8d017-411b-42b1-b935-58cf9532a98f',
