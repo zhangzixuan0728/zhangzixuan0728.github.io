@@ -1,12 +1,10 @@
 
 layout: page
-nav_title: Ar chatbot
+nav_title: AI chatbot
 title: Al chatbot
 permalink: /Zixuan Zhang-ai-bot/
 
 <b>Welcome to Zixuan Zhang's AI chatbot</b>
-<div id="mendable-component"></div>
-
 <div id="mendable-component"></div>
 
 <script src="https://unpkg.com/@mendable/search@0.0.205/dist/umd/mendable-bundle.min.js"></script>
